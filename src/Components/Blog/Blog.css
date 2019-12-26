@@ -10,6 +10,20 @@
     text-align: center;
 }
 
+article{
+    border: 1px #e5e5e5 solid;
+    margin-right: -0.25em;
+    
+}
+
+article h2 a{
+    color:#000;
+}
+
+article .article-desc{
+    color: #777;
+}
+
 .blogcard .outline{
     padding-top:0;
 }

@@ -12,7 +12,7 @@ const Blog = (props) => {
 
       const fetchUsers = async () => {
         const response = await axios.get(
-          `https://newsapi.org/v2/everything?q=bitcoin&from=2019-11-26&sortBy=publishedAt&apiKey=ad71aa9ff3e44845a7fe5e6249d6c3a5`
+          `https://newsapi.org/v2/top-headlines?country=us&apiKey=ad71aa9ff3e44845a7fe5e6249d6c3a5`
         );
     
         setPosts(response.data.articles);
@@ -25,13 +25,13 @@ const Blog = (props) => {
 
     const  blogcardarray = posts.map( (blogcard, i) => {
         
-        return <BlogList id={posts[i].id}  name={posts[i].title}  address={posts[i].description}  img={posts[i].urlToImage} />
+        return <BlogList id={posts[i].id}  title={posts[i].title}  description={posts[i].description}  img={posts[i].urlToImage} url={posts[i].url}  datetime ={posts[i].publishedAt} />
     } )
 
     return (
             <div className="mw9 center ph3-ns">
-                <div className="cf ph2-ns">
-                 <h1> Welcome to Our Post </h1>
+                <h1> Welcome to Our Post </h1>
+                <div className="flex flex-wrap">                 
                      {blogcardarray}
             </div>
         </div>

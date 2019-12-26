@@ -3,15 +3,18 @@ import 'tachyons';
 
 const BlogList = (props) => {
 
-    return (
-        <div className="blogcard grow fl w-100 w-third-ns pa3">
-            <div className="outline bg-white pv4">
-                <img src ={`${props.img}`} />
-                <div class="pa2 pa3-ns"><h2 class="f4 fw5 mv0">{ props.name}</h2>
-                <p class="f6 lh-copy measure mt2 mb0 mid-gray">{ props.address}</p>
+    return (  <article className="blogcard bg-white center mw5 ba b--black-10 mv4">   
+                 <img src ={`${props.img}`}  className="w-100 db" alt="Closeup photo of a tabby cat yawning." />
+                <div className="pv2 ph3">
+                    <h2 className="f6 ttu tracked"> <a href={`${props.url}`} className="link " target="_blank"> { props.title}</a></h2>
+                    <small className="gray db pv2"><time>{ props.datetime}</time></small>
+                    <p className="article-desc"> { props.description} </p> 
+
+                    <a class="f6 link dim ph3 pv2 mb2 dib white bg-dark-green" target="_blank" href={`${props.url}`}>Read More</a>
                 </div>
-            </div>
-        </div>
+                
+                
+            </article>
     )
 }
 
